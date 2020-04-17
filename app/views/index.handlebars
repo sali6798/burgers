@@ -1,31 +1,39 @@
-<h1>All the Burgz!</h1>
-
-<h2>Burgz waiting to be devoured!</h2>
-
-<ul>
-    {{#each burgers }}
-        {{#unless isDevoured }}
-            <li>
-                {{ name }}
-                <button class="change-devoured" data-id="{{ id }}">GET IN MY BELLY</button>
-            </li>
-        {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Devoured burgz!</h2>
-
-<ul>
-    {{#each burgers }}
-        {{#if isDevoured }}
-            <li>{{ name }}</li>
-        {{/if}}
-    {{/each}}
-</ul>
-
-<form class="create-form">
-    <div class="form-group">
-        <textarea name="name" id="burgerarea" maxlength="30" placeholder="Enter a burger you want to eat!"></textarea>
+<div class="container">
+    <h1>All the Burgz!</h1>
+    <div class="burgz-container">
+        <div class="to-be-devoured">
+            <h2>Burgz waiting to be devoured!</h2>
+            <ul>
+                {{#each burgers }}
+                    {{#unless isDevoured }}
+                        <li>
+                            <div class="list-item">
+                                <p>{{ name }}</p>
+                                <button class="change-devoured" data-id="{{ id }}">Eat 🍔</button>
+                            </div>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="devoured">
+            <h2>Devoured burgz!</h2>
+            <ul>
+                {{#each burgers }}
+                    {{#if isDevoured }}
+                        <li>
+                            <span class="devoured-name">{{ name }}</span>
+                            <button class="delete" data-id="{{ id }}">&#10060;</button>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
-    <button type="submit">Submit</button>
-</form>
+    <form class="create-form">
+        <div class="form-group">
+            <textarea name="name" id="burgerarea" maxlength="30" placeholder="Enter a burger you want to eat!"></textarea>
+        </div>
+        <button id="submit" type="submit">Add Burger</button>
+    </form>
+</div>

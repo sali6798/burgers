@@ -1,4 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap');
+
 body {
-    background-color: salmon;
+    background-color: #fff2c4;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    /* Seamless Background Food Vectors by Vecteezy https://www.vecteezy.com/free-vector/seamless-background-food */
+    background-image: url("../img/burger-background.png");
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    font-weight: normal;
+    font-size: 42px;
+    letter-spacing: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+li, .list-item p, .change-devoured {
+    font-size: 18px;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(250, 235, 215, 0.9);
+}
+
+.burgz-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.to-be-devoured, .devoured {
+    width: 50%;
+    padding: 10px;
+}
+
+.to-be-devoured li {
+    margin-bottom: 10px;
+}
+
+.list-item {
+    width: 100%;
+}
+
+.list-item p {
+    display: inline-block;
+    margin: 0;
+    width: 50%;
+}
+
+.change-devoured {
+    width: 100px;
+}
+
+.devoured li, .list-item p {
+    border: 2px goldenrod outset;
+    background-color: goldenrod;
+    padding: 5px;
+    word-break: break-all;
+}
+
+.devoured li {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.devoured-name {
+    margin-left: 10px;
+}
+
+.delete {
+    background: none;
+    border: none;
+}
+
+.delete:hover {
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .2s ease-in-out;
+}
+
+#burgerarea {
+    width: 40%;
+    height: 80px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    resize: none;
+}
+
+#submit {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 575px) {
+    .burgz-container {
+        display: block;
+    }
+
+    .to-be-devoured, .devoured {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    #burgerarea {
+        width: 90%;
+    }
 }
